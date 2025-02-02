@@ -6,13 +6,14 @@ internal sealed class TrackingInteractor(IExpenseRepository expenseRepository)
 
     internal async Task<ExpensesResponse> GetExpensesAsync(GetExpensesRequest request)
     {
-        IReadOnlyCollection<Expense> expenses = await _expenseRepository.GetExpenseAsync(request.UserId).ConfigureAwait(false);
+        IReadOnlyCollection<Expense> expenses = await _expenseRepository
+            .GetExpenseAsync(request.UserId)
+            .ConfigureAwait(false);
 
         return new ExpensesResponse(
             expenses,
             (uint)expenses.Count,
             (uint)expenses.Sum(e => e.Amount.Value)
         );
-
     }
 }
