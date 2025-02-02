@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ET.Globals", "ET.Globals", "{83D0B2C3-0ADC-A062-67CD-49C75D4D8054}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		global.json = global.json
+		.editorconfig = .editorconfig
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EC85197-376D-455E-ABCD-1243959CF830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EP.Tracking", "src\EP.Tracking\EP.Tracking.csproj", "{098A6341-9EF8-46C1-BA5B-417534FBB028}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{098A6341-9EF8-46C1-BA5B-417534FBB028} = {4EC85197-376D-455E-ABCD-1243959CF830}
+	EndGlobalSection
+EndGlobal
