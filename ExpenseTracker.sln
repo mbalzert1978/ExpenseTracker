@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EC85197-376
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EP.Tracking", "src\EP.Tracking\EP.Tracking.csproj", "{098A6341-9EF8-46C1-BA5B-417534FBB028}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C34832E7-17B6-4BFE-AD12-5F5BE071F9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EP.Tracking.Specs", "tests\EP.Tracking.Specs\EP.Tracking.Specs.csproj", "{79ECB614-C517-4174-B6F9-B831C2E6A32C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,8 +33,13 @@ Global
 		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{098A6341-9EF8-46C1-BA5B-417534FBB028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ECB614-C517-4174-B6F9-B831C2E6A32C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ECB614-C517-4174-B6F9-B831C2E6A32C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ECB614-C517-4174-B6F9-B831C2E6A32C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ECB614-C517-4174-B6F9-B831C2E6A32C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{098A6341-9EF8-46C1-BA5B-417534FBB028} = {4EC85197-376D-455E-ABCD-1243959CF830}
+		{79ECB614-C517-4174-B6F9-B831C2E6A32C} = {C34832E7-17B6-4BFE-AD12-5F5BE071F9B8}
 	EndGlobalSection
 EndGlobal
