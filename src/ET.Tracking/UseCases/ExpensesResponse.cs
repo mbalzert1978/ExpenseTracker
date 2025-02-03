@@ -1,6 +1,6 @@
-namespace EP.Tracking.UseCases;
+namespace ET.Tracking.UseCases;
 
-internal sealed record ExpensesResponse(
+public sealed record ExpensesResponse(
     IEnumerable<Expense> Expenses,
     uint TotalCount,
     uint TotalAmount

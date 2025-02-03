@@ -1,21 +1,16 @@
 using System.Globalization;
+using ET.Tracking.UseCases;
 
-using EP.Tracking.UseCases;
+namespace ET.Tracking.Adapters;
 
-namespace EP.Tracking.Adapters;
-
-internal sealed class TrackingController(TrackingInteractor trackingInteractor)
-{
+internal sealed class TrackingController(TrackingInteractor trackingInteractor) {
     private readonly TrackingInteractor _trackingInteractor = trackingInteractor;
 
-    internal async Task<ExpensesVM> GetExpensesAsync(string userId)
-    {
-        if (!Guid.TryParse(userId, out Guid userIdGuid))
-        {
+    internal async Task<ExpensesVM> GetExpensesAsync(string userId) {
+        if (!Guid.TryParse(userId, out var userIdGuid)) {
             return ExpensesVM.Empty;
         }
-
-        ExpensesResponse response = await _trackingInteractor
+        var response = await _trackingInteractor
             .GetExpensesAsync(new(userIdGuid))
             .ConfigureAwait(false);
         return new ExpensesVM(

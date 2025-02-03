@@ -1,3 +1,0 @@
-namespace EP.Tracking.Adapters;
-
-public sealed record ExpenseVM(string Id, string Amount, string Description, DateTime OccurredAt);

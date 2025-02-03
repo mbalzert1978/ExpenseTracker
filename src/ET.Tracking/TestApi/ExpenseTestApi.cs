@@ -1,14 +1,12 @@
-using EP.Tracking.Adapters;
-using EP.Tracking.UseCases;
+using ET.Tracking.Adapters;
+using ET.Tracking.UseCases;
 
-namespace EP.Tracking.TestApi;
+namespace ET.Tracking.TestApi;
 
-public sealed class ExpenseTestApi
-{
+public sealed class ExpenseTestApi {
     private readonly TrackingController _trackingController;
 
-    public ExpenseTestApi()
-    {
+    public ExpenseTestApi() =>
         _trackingController = new TrackingController(
             new TrackingInteractor(
                 new FakeExpenseRepository(
@@ -16,21 +14,17 @@ public sealed class ExpenseTestApi
                 )
             )
         );
-    }
 
-    public enum UserIds
-    {
-        Exists,
-        NotFound,
+    public enum UserIds {
+        Exists = 0,
+        NotFound = 1,
     }
 
     public static UserIds Existing => UserIds.Exists;
     public static UserIds NotFound => UserIds.NotFound;
 
-    public async Task<ExpensesVM> GetExpensesAsync(UserIds userId)
-    {
-        return userId switch
-        {
+    public async Task<ExpensesVM> GetExpensesAsync(UserIds userId) =>
+        userId switch {
             UserIds.Exists => await _trackingController
                 .GetExpensesAsync(Guid.Empty.ToString())
                 .ConfigureAwait(false),
@@ -39,5 +33,4 @@ public sealed class ExpenseTestApi
                 .ConfigureAwait(false),
             _ => ExpensesVM.Empty,
         };
-    }
 }

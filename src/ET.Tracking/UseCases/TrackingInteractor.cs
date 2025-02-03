@@ -1,15 +1,13 @@
-namespace EP.Tracking.UseCases;
+namespace ET.Tracking.UseCases;
 
-internal sealed class TrackingInteractor(IExpenseRepository expenseRepository)
-{
+public sealed class TrackingInteractor(IExpenseRepository expenseRepository) {
     private readonly IExpenseRepository _expenseRepository = expenseRepository;
 
-    internal async Task<ExpensesResponse> GetExpensesAsync(GetExpensesRequest request)
-    {
-        IReadOnlyCollection<Expense> expenses = await _expenseRepository
+    public async Task<ExpensesResponse> GetExpensesAsync(GetExpensesRequest request) {
+        ArgumentNullException.ThrowIfNull(request, nameof(request));
+        var expenses = await _expenseRepository
             .GetExpenseAsync(request.UserId)
             .ConfigureAwait(false);
-
         return new ExpensesResponse(
             expenses,
             (uint)expenses.Count,
